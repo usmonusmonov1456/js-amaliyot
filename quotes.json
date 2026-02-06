@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza",
+    "price": 60000,
+    "category": "Fast Food",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIibPbOeDQQscm9g-fDNdCvROokQJukg8nYQ&s"
+  },
+  {
+    "id": 2,
+    "name": "Hamburger",
+    "price": 35000,
+    "category": "Fast Food",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4N7Wc-2VOv1E5aGzPZBr3zaT7pjdB5Z80Rw&s"
+  },
+  {
+    "id": 3,
+    "name": "Donat Chocolate",
+    "price": 15000,
+    "category": "Dessert",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWkKuPfApF3rNAneRCkfpplc-0zvhgEken6A&s"
+  },
+  {
+    "id": 4,
+    "name": "Donat Strawberry",
+    "price": 16000,
+    "category": "Dessert",
+    "image": "https://static.toiimg.com/thumb/53096885.cms?imgsize=1572013&width=800&height=800"
+  },
+  {
+    "id": 5,
+    "name": "steak",
+    "price": 65000,
+    "category": "Fast Food",
+    "image": "https://www.seriouseats.com/thmb/-KA2hwMofR2okTRndfsKtapFG4Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__05__Anova-Steak-Guide-Sous-Vide-Photos15-beauty-159b7038c56a4e7685b57f478ca3e4c8.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Big shavarma",
+    "price": 42000,
+    "category": "Fast Food",
+    "image": "https://www.allrecipes.com/thmb/gErFllALd5ieWLGDOlN_S9uAsyU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/52407-chicken-shawarma-VAT-003-4x3-01-3189bab443d14bf282ffcc3b87bcf55a.jpg"
+  }
+]
