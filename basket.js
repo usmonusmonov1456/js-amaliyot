@@ -1,34 +1,52 @@
-const getBasket = JSON.parse(localStorage.getItem("basket"));
+let getBasket = JSON.parse(localStorage.getItem("basket")) || [];
 
 const cartItems = document.querySelector(".cart-items");
+const subtotal = document.querySelector("#subtotal");
+const totalAmount = document.querySelector(".total-amount");
+const tax = document.querySelector("#tax");
 
+let deliveryFee = 3.99;
+
+
+// 🔹 Basketni chiqarish
 function showBasket() {
-  getBasket.forEach((meal) => {
+  if (!cartItems) return;
+
+  cartItems.innerHTML = "";
+
+  getBasket.forEach((meal, index) => {
+
+    // agar quantity bo'lmasa 1 qilib qo'yamiz
+    if (!meal.quantity) {
+      meal.quantity = 1;
+    }
+
     cartItems.innerHTML += `
       <div class="cart-item">
-        <img
-          src=${meal.image}
-          alt=${meal.name}
-          class="item-image"
-        />
+        <img src="${meal.image}" alt="${meal.name}" class="item-image"/>
+
         <div class="item-details">
-          <div>
-            <div class="item-header">
-              <div>
-                <h3 class="item-title">${meal.name}</h3>
-                <p class="item-description">
-                  ${meal.category}
-                </p>
-              </div>
-              <button class="remove-btn">×</button>
+          <div class="item-header">
+            <div>
+              <h3 class="item-title">${meal.name}</h3>
+              <p class="item-description">${meal.category}</p>
             </div>
+
+            <button onclick="removeItem(${index})"
+              style="background:red;color:white;border:none;padding:5px 10px;cursor:pointer;">
+              x
+            </button>
           </div>
+
           <div class="item-footer">
-            <span class="item-price">$${meal.price}</span>
+            <span class="item-price">
+              $${(meal.price * meal.quantity).toFixed(2)}
+            </span>
+
             <div class="quantity-controls">
-              <button class="quantity-btn">-</button>
-              <span class="quantity-number">${meal.count}</span>
-              <button class="quantity-btn">+</button>
+              <button onclick="decreaseCount(${index})">-</button>
+              <span>${meal.quantity}</span>
+              <button onclick="increaseCount(${index})">+</button>
             </div>
           </div>
         </div>
@@ -37,24 +55,59 @@ function showBasket() {
   });
 }
 
-showBasket();
 
-const subtotal = document.querySelector("#subtotal");
-const totalAmount = document.querySelector(".total-amount");
-const tax = document.querySelector("#tax");
-
-let countPrice = 0;
-let deliveryFee = 3.99;
-
-function showTotalPrice() {
-  getBasket.forEach((meal) => {
-    countPrice += meal.price;
-  });
-
-  subtotal.textContent = "$" + countPrice;
-  tax.textContent = "$" + (countPrice / 10).toFixed(2);
-  totalAmount.textContent =
-    "$" + (countPrice + countPrice / 10 + deliveryFee).toFixed(2);
+// 🔹 + tugma
+function increaseCount(index) {
+  getBasket[index].quantity++;
+  updateStorage();
 }
 
-showTotalPrice();
+
+// 🔹 - tugma
+function decreaseCount(index) {
+  if (getBasket[index].quantity > 1) {
+    getBasket[index].quantity--;
+  } else {
+    getBasket.splice(index, 1);
+  }
+  updateStorage();
+}
+
+
+// 🔹 Itemni o‘chirish
+function removeItem(index) {
+  getBasket.splice(index, 1);
+  updateStorage();
+}
+
+
+// 🔹 Narxlarni hisoblash
+function showTotalPrice() {
+  if (!subtotal || !tax || !totalAmount) return;
+
+  let countPrice = 0;
+
+  getBasket.forEach((meal) => {
+    countPrice += meal.price * meal.quantity;
+  });
+
+  subtotal.textContent = "$" + countPrice.toFixed(2);
+  tax.textContent = "$" + (countPrice * 0.1).toFixed(2);
+  totalAmount.textContent =
+    "$" + (countPrice + countPrice * 0.1 + deliveryFee).toFixed(2);
+}
+
+
+// 🔹 LocalStorage yangilash
+function updateStorage() {
+  localStorage.setItem("basket", JSON.stringify(getBasket));
+  showBasket();
+  showTotalPrice();
+}
+
+
+// 🔹 Sahifa yuklanganda ishga tushadi
+document.addEventListener("DOMContentLoaded", () => {
+  showBasket();
+  showTotalPrice();
+});

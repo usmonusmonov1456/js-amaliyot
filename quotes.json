@@ -2,43 +2,29 @@
   {
     "id": 1,
     "name": "Pizza",
-    "price": 60000,
+    "price": 1,
     "category": "Fast Food",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIibPbOeDQQscm9g-fDNdCvROokQJukg8nYQ&s"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZkyPKzf9Mc8_2iWiVv7RsXlk63I5Y81wlcQ&s"
   },
   {
     "id": 2,
     "name": "Hamburger",
-    "price": 35000,
+    "price": 3,
     "category": "Fast Food",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4N7Wc-2VOv1E5aGzPZBr3zaT7pjdB5Z80Rw&s"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVc_pkV1xAtoc9gL1HvKFnuYg2Seg6t8Z4yA&s"
   },
   {
     "id": 3,
     "name": "Donat Chocolate",
-    "price": 15000,
+    "price": 1,
     "category": "Dessert",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWkKuPfApF3rNAneRCkfpplc-0zvhgEken6A&s"
+    "image": "https://thumbs.dreamstime.com/b/chocolate-burgers-colorful-fillings-plate-two-burger-shaped-desserts-buns-sit-creating-playful-delicious-twist-321019969.jpg"
   },
   {
     "id": 4,
-    "name": "Donat Strawberry",
-    "price": 16000,
+    "name": "gamburger",
+    "price": 1,
     "category": "Dessert",
-    "image": "https://static.toiimg.com/thumb/53096885.cms?imgsize=1572013&width=800&height=800"
-  },
-  {
-    "id": 5,
-    "name": "steak",
-    "price": 65000,
-    "category": "Fast Food",
-    "image": "https://www.seriouseats.com/thmb/-KA2hwMofR2okTRndfsKtapFG4Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__05__Anova-Steak-Guide-Sous-Vide-Photos15-beauty-159b7038c56a4e7685b57f478ca3e4c8.jpg"
-  },
-  {
-    "id": 6,
-    "name": "Big shavarma",
-    "price": 42000,
-    "category": "Fast Food",
-    "image": "https://www.allrecipes.com/thmb/gErFllALd5ieWLGDOlN_S9uAsyU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/52407-chicken-shawarma-VAT-003-4x3-01-3189bab443d14bf282ffcc3b87bcf55a.jpg"
+    "image": "https://dam.mediacorp.sg/image/upload/s--8VfMGVI7--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/burger-king-bk-chocolate-whopper-data.jpg?itok=NQsrhh9b"
   }
 ]

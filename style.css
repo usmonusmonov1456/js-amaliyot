@@ -3,15 +3,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: black;
 }
 
+.container1 span{
+  color: red;
+
+}
+.container1 button{
+ width: 110px;
+ height: 35px;
+ background-color: #ff6b6b;
+ border: none;
+ color: white;
+}
+.container1{
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  width: 100%;
+  height: 55vh;
+  align-items: center;
+ 
+}
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+background-color:rgb(255, 245, 245);
   min-height: 100vh;
   padding: 0;
 }
+.container1 img{
+  width: 400px;
+  height: 400px;
 
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,14 +44,16 @@ body {
 
 /* Header Styles */
 header {
-  background: white;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  position: sticky;
+ 
+
+
   top: 0;
   z-index: 1000;
   animation: slideDown 0.6s ease;
 }
-
+header span{
+  color: red;
+}
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -155,9 +181,8 @@ h1 {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 20px 20px 40px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
 }
 
 .card {
@@ -367,4 +392,228 @@ h1 {
   .card-price {
     font-size: 1.5rem;
   }
+}
+
+
+.container2{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+height: 80vh;
+align-items: center;
+}
+
+.card5 button{
+  width: 100px;height:30px ;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 10px 10px 0px 10px;
+}
+.card6 button{
+  border-radius: 10px 10px 0 10px ;
+}
+.container3{
+
+width: 80%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+margin: auto;
+gap: 30px;
+padding-top: 100px;
+}
+.container3 i {
+  background-color: white;
+}
+
+
+.cart8{
+
+
+  text-align:center;
+}
+
+.cart8-title{
+  font-size:28px;
+  margin-bottom:40px;
+  margin: auto;
+}
+
+.cart8-title span{
+  color:orange;
+}
+
+.cart8-box{
+ 
+  margin: auto;
+  padding:40px;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+.cart8-left img{
+  width:280px;
+  border-radius:20px;
+}
+
+
+
+.cart8-text{
+  color:#555;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+.cart8-name{
+  color:orange;
+  margin-bottom:5px;
+}
+
+.cart8-job{
+  color:gray;
+  font-size:14px;
+}
+
+.cart8-buttons{
+  margin-top:20px;
+}
+
+.cart8-btn,
+.cart8-btn2{
+  border:none;
+  background:none;
+  font-size:20px;
+  cursor:pointer;
+  margin-right:10px;
+}
+
+.cart8-btn2{
+  color:orange;
+}
+.card9{
+  margin-left:340px ;
+}
+.cart8-app{
+  width:80%;
+  margin:80px auto;
+}
+
+.cart8-app-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.cart8-app-left{
+  width:50%;
+}
+
+.cart8-app-title{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.cart8-app-title span{
+  color:orange;
+}
+
+.cart8-app-text{
+  color:#555;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+.cart8-app-buttons{
+  display:flex;
+  gap:15px;
+}
+
+.cart8-app-btn{
+  width:140px;
+  cursor:pointer;
+}
+
+.cart8-app-right{
+  width:40%;
+  position:relative;
+}
+
+.cart8-phone1{
+  width:160px;
+  transform:rotate(-15deg);
+}
+
+.cart8-phone2{
+  width:160px;
+  position:absolute;
+  left:100px;
+  top:20px;
+  transform:rotate(15deg);
+}
+.cart8-app{
+  margin-left: 300px;
+}
+
+
+.cart10{
+    width:80%;
+    margin:50px auto;
+    background:#ff6a3d;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    color:#fff;
+}
+
+.cart11{
+    margin-top:20px;
+}
+
+.cart11 input{
+    padding:10px;
+    width:60%;
+    border:none;
+    border-radius:20px;
+}
+
+.cart11 button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#fff;
+    color:#ff6a3d;
+}
+
+.footer{
+    background:#fff;
+    padding:30px;
+    display:flex;
+    gap:40px;
+  padding-top: 30px;
+padding-left: 40%;
+}
+
+.fcol p{
+    font-size:14px;
+    color:#555;
+}
+.container button{
+  width: 100px;
+  height: 30px;
+  background-color: #ff6a3d;
+  margin: auto;
+
+}
+  .container img{
+    width: 100%;
+    height: 20vh;
+  }
+
+.card button{
+border: none;
+color: white;
 }

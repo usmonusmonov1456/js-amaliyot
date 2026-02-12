@@ -3,15 +3,11 @@ let arrMeals = [];
 async function getMeals() {
   try {
     const response = await fetch("./quotes.json");
-
     const meals = await response.json();
-
     arrMeals = meals;
-
     showMeals();
-
   } catch (error) {
-    console.log(error);
+    console.log("Xatolik chiqdi:", error);
   }
 }
 
@@ -20,40 +16,25 @@ getMeals();
 const cardContainer = document.querySelector(".cards-grid");
 
 function showMeals() {
-  console.log(arrMeals)
-  arrMeals.forEach((meal, index) => {
+  cardContainer.innerHTML = "";
+
+  for (let i = 0; i < arrMeals.length; i++) {
     cardContainer.innerHTML += `
       <div class="card">
-        <div class="card-image-container">
-          <img
-            src=${meal.image}
-            alt="Pizza"
-            class="card-image"
-          />
-          ${
-            meal.badge != null
-              ? `<span class="card-badge">${meal.badge}</span>`
-              : ""
-          }
+        <div>
+          <img src="${arrMeals[i].image}" width="150">
         </div>
-        <div class="card-content">
-          <h2 class="card-title">${meal.name}</h2>
-          <p class="card-description">
-            ${meal.category}
-          </p>
-          <div class="card-footer">
-            <span class="card-price">$${meal.price}</span>
-            <button class="add-to-cart-btn" onclick="addToCard(${index})">
-              Add to Cart
-            </button>
-          </div>
-        </div>
+        <h3>${arrMeals[i].name}</h3>
+        <p>${arrMeals[i].category}</p>
+        <p>${arrMeals[i].price} $</p>
+        <button onclick="addToCart(${i})">Add to Cart</button>
       </div>
     `;
-  });
+  }
 }
 
-const basket = JSON.parse(localStorage.getItem("basket")) || [];
+let basket = JSON.parse(localStorage.getItem("basket")) || [];
+
 const cartCount = document.querySelector(".cart-count");
 
 function showTotalMeal() {
@@ -62,10 +43,24 @@ function showTotalMeal() {
 
 showTotalMeal();
 
-function addToCard(index) {
+function addToCart(index) {
   basket.push(arrMeals[index]);
-
   localStorage.setItem("basket", JSON.stringify(basket));
   showTotalMeal();
 }
 
+function removeItem(index) {
+  basket.splice(index, 1);
+  localStorage.setItem("basket", JSON.stringify(basket));
+  showTotalMeal();
+}
+
+function calculateTotal() {
+  let total = 0;
+
+  for (let i = 0; i < basket.length; i++) {
+    total += basket[i].price;
+  }
+
+  return total;
+}
