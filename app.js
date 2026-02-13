@@ -1,5 +1,5 @@
 let arrMeals = [];
-
+let a=prompt('ismingizni-kiriting')
 async function getMeals() {
   try {
     const response = await fetch("./quotes.json");
@@ -27,7 +27,7 @@ function showMeals() {
         <h3>${arrMeals[i].name}</h3>
         <p>${arrMeals[i].category}</p>
         <p>${arrMeals[i].price} $</p>
-        <button onclick="addToCart(${i})">Add to Cart</button>
+        <button onclick="addToCart(${i})" class="cart-btn">Add to Cart</button>
       </div>
     `;
   }
@@ -44,6 +44,7 @@ function showTotalMeal() {
 showTotalMeal();
 
 function addToCart(index) {
+  alert("hurmatli mijozimiz "+a+'zakas qilgn narsalaringiz savatchaga tushdi hohlasangiz svatcha qismiga otib buyurtma bering')
   basket.push(arrMeals[index]);
   localStorage.setItem("basket", JSON.stringify(basket));
   showTotalMeal();
@@ -64,3 +65,7 @@ function calculateTotal() {
 
   return total;
 }
+
+
+
+

@@ -1,10 +1,10 @@
 let getBasket = JSON.parse(localStorage.getItem("basket")) || [];
-
+let a= prompt('ismingizni kiriting')
 const cartItems = document.querySelector(".cart-items");
 const subtotal = document.querySelector("#subtotal");
 const totalAmount = document.querySelector(".total-amount");
 const tax = document.querySelector("#tax");
-
+const btn = document.querySelector(".checkout-btn");
 let deliveryFee = 3.99;
 
 
@@ -60,6 +60,11 @@ function increaseCount(index) {
   getBasket[index].quantity++;
   updateStorage();
 }
+
+
+btn.addEventListener("click", function () {
+  alert("hurmatli mijozimiz "+a+ " buyurtma berildi 30 sikunt ichida eshigingida boladi");
+});
 
 
 function decreaseCount(index) {
