@@ -8,7 +8,7 @@ const tax = document.querySelector("#tax");
 let deliveryFee = 3.99;
 
 
-// 🔹 Basketni chiqarish
+
 function showBasket() {
   if (!cartItems) return;
 
@@ -16,7 +16,7 @@ function showBasket() {
 
   getBasket.forEach((meal, index) => {
 
-    // agar quantity bo'lmasa 1 qilib qo'yamiz
+ 
     if (!meal.quantity) {
       meal.quantity = 1;
     }
@@ -56,14 +56,12 @@ function showBasket() {
 }
 
 
-// 🔹 + tugma
 function increaseCount(index) {
   getBasket[index].quantity++;
   updateStorage();
 }
 
 
-// 🔹 - tugma
 function decreaseCount(index) {
   if (getBasket[index].quantity > 1) {
     getBasket[index].quantity--;
@@ -74,14 +72,14 @@ function decreaseCount(index) {
 }
 
 
-// 🔹 Itemni o‘chirish
+
 function removeItem(index) {
   getBasket.splice(index, 1);
   updateStorage();
 }
 
 
-// 🔹 Narxlarni hisoblash
+
 function showTotalPrice() {
   if (!subtotal || !tax || !totalAmount) return;
 
@@ -98,7 +96,6 @@ function showTotalPrice() {
 }
 
 
-// 🔹 LocalStorage yangilash
 function updateStorage() {
   localStorage.setItem("basket", JSON.stringify(getBasket));
   showBasket();
@@ -106,7 +103,6 @@ function updateStorage() {
 }
 
 
-// 🔹 Sahifa yuklanganda ishga tushadi
 document.addEventListener("DOMContentLoaded", () => {
   showBasket();
   showTotalPrice();
