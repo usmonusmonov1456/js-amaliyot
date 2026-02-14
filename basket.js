@@ -63,7 +63,7 @@ function increaseCount(index) {
 
 
 btn.addEventListener("click", function () {
-  alert("hurmatli mijozimiz "+a+ " buyurtma berildi 30 sikunt ichida eshigingida boladi");
+  alert("hurmatli mijozimiz "+a+ " buyurtma berildi 30 minut  ichida eshigingida boladi");
 });
 
 
